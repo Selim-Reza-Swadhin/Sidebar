@@ -1,0 +1,76 @@
+* {
+  margin:0px;
+  padding:0px;
+  box-sizing:border-box;
+  font-family:"Roboto";
+}
+.header {
+  position:fixed;
+  top:0px;
+  left:0px;
+  width:100%;
+  height:55px;
+  background:#000;
+}
+.header .toggle-btn {
+  position:absolute;
+  right:10px;
+  width:55px;
+  hright:55px;
+  cursor:pointer;
+}
+.header span {
+  position:relative;
+  top:0px;
+  display:block;
+  background:#fff;
+  width:80%;
+  height:5px;
+  margin:10px 0px;
+}
+.header .toggle-btn.active span:nth-child(1) {
+  top:15px;
+  transform:rotate(45deg);
+  transition:top 200ms ease-in-out 0ms,transform 250ms ease-in-out 150ms;
+}
+.header .toggle-btn.active span:nth-child(3) {
+  top:-15px;
+  transform:rotate(-45deg);
+  transition:top 200ms ease-in-out 0ms,transform 250ms ease-in-out 150ms;
+}
+.header .toggle-btn.active span:nth-child(2) {
+  opacity:0;
+  transition:opacity 50ms ease-in-out 150ms;
+}
+.header .toggle-btn span:nth-child(1),
+.header .toggle-btn span:nth-child(3) {
+  transition:transform 250ms ease-in-out 0ms,top 200ms ease-in-out 150ms;
+}
+.header .toggle-btn span:nth-child(2) {
+  opacity:1;
+  transition:opacity 50ms ease-in-out 200ms;
+}
+.sidebar {
+  position:fixed;
+  top:55px;
+  right:-100%;
+  width:100%;
+  height:calc(100% - 55px);
+  background:#202020;
+  padding:15px;
+  opacity:0;
+  transition:all 450ms ease-in-out;
+}
+.sidebar .item {
+  font-size:18px;
+  color:#fafafa;
+  font-weight:300;
+  text-transform:uppercase;
+  padding:12px 5px;
+  border-bottom:1px solid #4b4a4a;
+  cursor:pointer;
+}
+.sidebar.active {
+  opacity:1;
+  right:0px;
+}
